@@ -3,44 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Volume Gambling Table</title>
+  <title>Worst Volume Interaction Desig</title>
   <link rel="stylesheet" href="final_project.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <div class="app">
-    <header>The Volume Gambling Table</header>
+  <header>
+    <div class="title">The Volume Gambling Table</div>
+  </header>
 
-    <section class="instructions">
-      <div class="instructions-text">Please add between 1-50 volume points for betting.</div>
-    </section>
-
+  <main>
     <section class="controls">
-
-        <div class="icon-container">
+      <div class="icon-container">
         <img src="Speaker_Icon.svg.png" alt="volume icon" class="volume-icon">
-        </div>
+        <span id="accepted-volume" class="accepted-volume">Accepted: 0</span>
+      </div>
 
-        <label for="volume">Volume Number:</label>
-        <input type="number" id="volume" name="volume" min="0" max="20">
+      <label for="volume">Volume Number:</label>
+      <input type="number" id="volume" name="volume" min="0" max="20">
 
-        <button type="button" id="bet-btn" class="button">
-            Bet!
-        </button>
+      <button type="button" id="bet-btn" class="button">
+        Bet!
+      </button>
 
-        <div class="indicators">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-        </div>
+      <div class="lights">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
 
-        <div class="results">
-            <p>Starting Bet: <span id="starting-bet">0</span></p>
-            <p>Current Volume: <span id="current-total">0</span></p>
-            <p id="flip-result">Waiting for bet...</p>
-        </div>
+      <button type="button" id="accept-btn" class="accept-button">
+        Stop and Accept Volume
+      </button>
+
     </section>
-  </div>
 
+    <aside class="results">
+
+      <div class="instructions">
+        <p>Please add between 1–50 volume points for betting.</p>
+        <br>
+        <p>Accepted bets over 100 points will default to 100.</p>
+      </div>
+
+      <p>Starting Bet: <span id="starting-bet">0</span></p>
+      <p>Current Volume: <span id="current-total">0</span></p>
+      <p id="flip-result">Waiting for bet...</p>
+
+    </aside>
+
+  </main>
   <script src="final_project.js"></script>
 </body>
+
 </html>

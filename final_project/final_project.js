@@ -1,3 +1,6 @@
+const acceptButton = document.getElementById("accept-btn");
+const acceptedVolumeDisplay = document.getElementById("accepted-volume");
+
 const button = document.getElementById("bet-btn");
 const volumeInput = document.getElementById("volume");
 const circles = document.querySelectorAll(".circle");
@@ -34,10 +37,10 @@ button.addEventListener("click", () => {
 
       if (isHeads) {
         currentTotal = currentTotal * 2;
-        flipResultDisplay.textContent = `Light ${index + 1}: Heads! Total doubled.`;
+        flipResultDisplay.textContent = `Coin Flip ${index + 1}: Heads! Total doubled.`;
       } else {
         currentTotal = currentTotal / 2;
-        flipResultDisplay.textContent = `Light ${index + 1}: Tails! Total halved.`;
+        flipResultDisplay.textContent = `Coin Flip ${index + 1}: Tails! Total halved.`;
       }
 
       currentTotalDisplay.textContent = currentTotal;
@@ -45,4 +48,11 @@ button.addEventListener("click", () => {
 
     timeouts.push(timeout);
   });
+});
+
+acceptButton.addEventListener("click", () => {
+  const value = Number(currentTotalDisplay.textContent);
+  const cappedValue = Math.min(value, 100);
+
+  acceptedVolumeDisplay.textContent = `Accepted: ${cappedValue}`;
 });
